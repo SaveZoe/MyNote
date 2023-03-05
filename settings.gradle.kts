@@ -5,6 +5,7 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+@Suppress("UnstableApiUsage")
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -12,5 +13,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "My Application"
-include ':app'
+enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
+rootProject.name = "MyApplication"
+include(":app")
