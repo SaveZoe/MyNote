@@ -9,7 +9,8 @@ import com.example.myapplication.data.entities.Category
     entities = [
         Category::class,
     ],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class AppDB : RoomDatabase() {
     abstract fun categoryDao(): CategoryDao

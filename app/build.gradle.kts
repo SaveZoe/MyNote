@@ -3,7 +3,6 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.kapt)
-    alias(libs.plugins.hilt)
 }
 
 android {
@@ -34,9 +33,8 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
-
         }
     }
 
@@ -77,7 +75,6 @@ android {
             "META-INF/*.properties",
         )
     }
-
 }
 
 kapt {
@@ -94,19 +91,18 @@ dependencies {
     implementation(libs.compose.ui.ui)
     implementation(libs.compose.ui.tooling)
     implementation(libs.compose.material3)
+
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.common)
     annotationProcessor(libs.androidx.room.compiler)
     implementation(libs.androidx.room.paging)
     ksp(libs.androidx.room.compiler)
+
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.core)
-
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
-
     androidTestImplementation(libs.kotlinx.coroutines.test)
+
     androidTestImplementation(libs.androidx.junit)
     testImplementation(libs.junit)
     testImplementation(libs.androidx.test.core)
@@ -114,6 +110,6 @@ dependencies {
     testImplementation(libs.androidx.room.testing)
     testImplementation(libs.yupiter)
     androidTestImplementation(libs.androidx.test.runner)
-
-
+    implementation(libs.koin)
+    androidTestImplementation(libs.koin.test)
 }

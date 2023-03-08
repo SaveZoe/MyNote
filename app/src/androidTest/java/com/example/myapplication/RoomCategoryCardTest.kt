@@ -15,7 +15,6 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 
-
 @RunWith(AndroidJUnit4::class)
 class RoomCategoryCardTest {
     private lateinit var categoryDao: CategoryDao
@@ -25,7 +24,8 @@ class RoomCategoryCardTest {
     fun createDb() {
         val context = ApplicationProvider.getApplicationContext<Context>()
         db = Room.inMemoryDatabaseBuilder(
-            context, AppDB::class.java
+            context,
+            AppDB::class.java,
         ).build()
         categoryDao = db.categoryDao()
     }
@@ -105,6 +105,7 @@ class RoomCategoryCardTest {
         val test = categoryDao.getCategoryCard(0)
         assertEquals(0, test.first().first().id)
     }
+
     @Test
     fun getErrorCardId1() = runBlocking {
         categoryDao.addCategoryCard(Category(categoryName = "test"))
@@ -126,6 +127,7 @@ class RoomCategoryCardTest {
         val test = categoryDao.getAllCategoryCard()
         assertEquals(2, test.first().count())
     }
+
     @Test
     fun errorAdd2Card() = runBlocking {
         categoryDao.addCategoryCard(Category(categoryName = "test1"))

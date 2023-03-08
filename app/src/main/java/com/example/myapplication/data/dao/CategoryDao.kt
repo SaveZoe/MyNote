@@ -20,5 +20,4 @@ interface CategoryDao {
 
     @Query("SELECT * FROM Category")
     fun getAllCategoryCard(): Flow<List<Category>>
-
 }

@@ -16,17 +16,19 @@ coroutines = "1.6.4"
 compileSdk = "33"
 minSdk = "23"
 targetSdk = "31"
-hilt = "2.44"
+koin = "3.4.2"
+spotless = "6.16.0"
 
 [plugins]
 
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+android-lint = { id = "com.android.lint", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 ksp = "com.google.devtools.ksp:1.8.10-1.0.9"
-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 android-test = { id = "com.android.test", version.ref = "agp" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 
 [libraries]
 
@@ -55,15 +57,15 @@ kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutine
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 
-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
-hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
-
 androidx-test-core = "androidx.test:core-ktx:1.5.0"
 androidx-test-junit = "androidx.test.ext:junit-ktx:1.1.5"
 androidx-test-rules = "androidx.test:rules:1.5.0"
-androidx-test-runner = "androidx.test:runner:1.5.2"
+androidx-test-runner = "androidx.test:runner:1.5.3-alpha01"
 junit = "junit:junit:4.13.2"
-yupiter = 'org.junit.jupiter:junit-jupiter:5.8.2'
+yupiter = 'org.junit.jupiter:junit-jupiter:5.9.2'
+
+koin = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+koin-test = "io.insert-koin:koin-test-junit4:3.3.3"
 
 [bundles]
 
