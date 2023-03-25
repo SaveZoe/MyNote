@@ -9,7 +9,8 @@ val roomModule = module {
     single {
         Room.databaseBuilder(
             context = androidApplication(),
-            klass = AppDB::class.java, "AppDB"
+            klass = AppDB::class.java,
+            "AppDB",
         ).build()
     }
 
@@ -17,4 +18,3 @@ val roomModule = module {
         get<AppDB>().categoryDao()
     }
 }
-

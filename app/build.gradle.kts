@@ -8,6 +8,7 @@ plugins {
 android {
     namespace = "com.example.myapplication"
     compileSdk = 33
+    compileSdkPreview = "UpsideDownCake"
     defaultConfig {
         applicationId = "com.example.myapplication"
         minSdk = 24
