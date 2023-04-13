@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.kapt)
+
 }
 
 android {
@@ -37,6 +38,7 @@ android {
                 "proguard-rules.pro",
             )
         }
+
     }
 
     compileOptions {
@@ -74,6 +76,9 @@ android {
             "/*.properties",
             "fabric/*.properties",
             "META-INF/*.properties",
+            "META-INF/DEPENDENCIES",
+            // https://github.com/Kotlin/kotlinx.coroutines/issues/3668
+            "META-INF/versions/9/previous-compilation-data.bin"
         )
     }
 }
